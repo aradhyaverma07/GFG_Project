@@ -1,0 +1,56 @@
+{% extends "base3.html" %}
+{% block title %}
+Departments
+{% endblock title %}
+
+{% block body %}
+<br><br><br><br><br><br>
+<table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Dept_ID</th>
+                  <th scope="col">Department Name</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>      
+              <tbody>
+       {% for department in query %}
+          <tr>
+            
+            <td>{{department.depid}}</td>
+            <td>{{department.depname}}</td>
+           
+            <td>
+                           
+              <a href="/ddelete/{{department.id}}" type="button" class="btn btn-primary btn-sm mx-1">Delete</button>          
+            </td>
+          </tr>
+
+          {% endfor %}
+      </tbody>
+             </table>  
+          
+ <br><br>
+     <div class="container">
+      <h2>Add Department</h2>
+      <form action="/adddepartment" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-lable">Department ID</label>
+          <input type="text" class="form-control" name="depid" id="depid" autocomplete="off" aria-describedby="emailHelp" >
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-lable">Department Name</label>
+          <input type="text" class="form-control" name="depname" id="depname" autocomplete="off" >
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+      <tbody>      
+          
+    {% endblock body %}
+      
+        
+
+
+

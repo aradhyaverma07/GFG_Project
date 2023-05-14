@@ -1,0 +1,59 @@
+{% extends "base3.html" %}
+{% block title %}
+Departments
+{% endblock title %}
+
+{% block body %}
+<br><br><br><br><br><br>
+<table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Pharmacy_ID</th>
+                  <th scope="col">Pharmacy_ID </th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>      
+              <tbody>
+              {% for query in query %}
+              
+            
+          <tr>
+            
+            <td>{{query.phid}}</td>
+            <td>{{query.phname}}</td>
+           
+            <td>
+                           
+              <a href="/phdelete/{{query.id}}" type="button" class="btn btn-primary btn-sm mx-1">Delete</button>          
+            </td>
+          </tr>
+         {% endfor %}
+      
+        
+      </tbody>
+             </table>  
+          
+ <br><br>
+     <div class="container">
+      <h2>Add Department</h2>
+      <form action="/addpharmacy" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-lable">Pharmacy_ID</label>
+          <input type="text" class="form-control" name="phid" id="phid" autocomplete="off" aria-describedby="emailHelp" >
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-lable">Pharmacy Name</label>
+          <input type="text" class="form-control" name="phname" id="phname" autocomplete="off" >
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+      <tbody>      
+          
+    {% endblock body %}
+      
+        
+
+
+

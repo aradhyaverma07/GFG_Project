@@ -1,0 +1,37 @@
+{% extends "base3.html" %}
+{% block title %}
+Pharmacy
+{% endblock title %}
+
+{% block body %}
+<br><br><br><br><br><br>
+<table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Pharmacy_ID</th>
+                  <th scope="col">Pharmacy Name</th>
+                  
+                </tr>
+              </thead>      
+              <tbody>
+         {% for query in query %}
+         
+         
+          <tr>
+         
+            <td>{{query.phid}}</td>
+            <td>{{query.phname}}</td>
+           
+          </tr>
+        {% endfor %}
+       
+      </tbody>
+             </table>  
+          
+          
+    {% endblock body %}
+      
+        
+
+
+

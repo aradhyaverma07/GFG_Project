@@ -1,0 +1,59 @@
+{% extends "base3.html" %}
+{% block title %}
+Departments
+{% endblock title %}
+
+{% block body %}
+<br><br><br><br><br><br>
+<table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">SRFID</th>            
+                  <th scope="col">Bed Type</th>           
+                  <th scope="col">SpO2</th>
+                  <th scope="col">Patient Name</th>
+                  <th scope="col">Phone No</th>
+                  <th scope="col">Address</th>
+                  
+                </tr>
+              </thead>      
+              <tbody>
+             
+         {% for data in data%}
+         
+        
+               
+                
+          <tr>
+         
+<td>
+  {{data.srfid}}
+</td>
+
+<td>
+     {{data.bedtype}}
+</td>
+<td>
+      {{data.spo2}}
+</td>
+<td>
+      {{data.pname}}
+</td>
+<td>
+      {{data.pphone}}
+</td>
+<td> 
+      {{data.paddress}}
+</td>         
+ </tr>
+     {% endfor %}
+</tbody>
+</table>  
+     
+          
+    {% endblock body %}
+      
+        
+
+
+

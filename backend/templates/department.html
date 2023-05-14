@@ -1,0 +1,39 @@
+{% extends "base3.html" %}
+{% block title %}
+Departments
+{% endblock title %}
+
+{% block body %}
+<br><br><br><br><br><br>
+<table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Dept_ID</th>
+                  <th scope="col">Department Name</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>      
+              <tbody>
+       {% for department in query %}
+          <tr>
+         
+            <td>{{department.depid}}</td>
+            <td>{{department.depname}}</td>
+           
+            <td>
+                           
+              <a href="/hospital/{{department.depid}}" type="button" class="btn btn-primary btn-sm mx-1">Hospitals</button>          
+            </td>
+          </tr>
+
+          {% endfor %}
+      </tbody>
+             </table>  
+          
+          
+    {% endblock body %}
+      
+        
+
+
+

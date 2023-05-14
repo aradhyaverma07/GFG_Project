@@ -1,0 +1,37 @@
+{% extends "base3.html" %}
+{% block title %}
+Hospitals
+{% endblock title %}
+
+{% block body %}
+<br><br><br><br><br><br>
+<table class="table">
+              <thead class="thead-dark">
+                <tr>
+                 
+                  <th scope="col">Hospital Name</th>
+                  <th scope="col">Hospital Address</th>
+                </tr>
+              </thead>      
+              <tbody>
+       {% for query in query %}
+          <tr>
+         
+            <td>{{query.hname}}</td>
+            <td>{{query.haddress}}</td>
+           
+           
+          </tr>
+
+          {% endfor %}
+      </tbody>
+             </table>  
+          
+    <a href="/bookbed">Book Bed</a>
+
+    {% endblock body %}
+      
+        
+
+
+
